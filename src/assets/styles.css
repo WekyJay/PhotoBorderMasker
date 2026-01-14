@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #0b0b0b;
+  --card: #121212;
+  --layer: #151515;
+  --border: #1e1e1e;
+  --text: #eaeaea;
+  --muted: #9ca3af;
+  --accent: #2563eb;
+  --accent-fg: #ffffff;
+  --shadow: 0 12px 28px rgba(0,0,0,.35);
+  --radius: 12px;
+}
+
+html, body { height: 100%; background: var(--bg); color: var(--text); font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif; }
+.bg-background { background: var(--bg); }
+.bg-card { background: var(--card); }
+.border-border { border-color: var(--border); }
+.text-text { color: var(--text); }
+
+/* Element Plus theme override for minimal dark */
+:root {
+  --el-color-primary: var(--accent);
+  --el-text-color-primary: var(--text);
+  --el-text-color-secondary: var(--muted);
+  --el-border-color: var(--border);
+  --el-bg-color: var(--bg);
+  --el-fill-color-blank: var(--card);
+  --el-box-shadow: var(--shadow);
+}
+
+/* Minimal buttons */
+.el-button { 
+  background: transparent; 
+  color: var(--text); 
+  border: 1px solid var(--border); 
+  border-radius: var(--radius); 
+  padding: 8px 14px; 
+  transition: all .2s cubic-bezier(0.4, 0, 0.2, 1);
+  font-weight: 500;
+  position: relative;
+  overflow: hidden;
+}
+.el-button:hover { 
+  background: rgba(255,255,255,0.05); 
+  border-color: #2a2a2a; 
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+.el-button:active { transform: translateY(0px); }
+.el-button--primary { 
+  background: var(--accent); 
+  color: var(--accent-fg); 
+  border-color: transparent; 
+  box-shadow: 0 2px 8px rgba(37,99,235,0.3);
+}
+.el-button--primary:hover { 
+  filter: brightness(1.1); 
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37,99,235,0.4);
+}
+.el-button--small { padding: 6px 10px; font-size: 12px; border-radius: 10px; }
+.el-button--danger { 
+  background: #dc2626; 
+  color: white; 
+  border-color: transparent; 
+}
+.el-button--danger:hover { 
+  background: #b91c1c; 
+  transform: translateY(-1px);
+}
+
+/* Minimal inputs */
+.el-input__inner, .el-select, select.el-select { 
+  background: var(--layer); 
+  border: 1px solid var(--border); 
+  color: var(--text); 
+  border-radius: var(--radius); 
+  padding: 8px 12px; 
+  transition: all .2s ease;
+  font-size: 14px;
+}
+.el-input__inner:focus { 
+  outline: none; 
+  border-color: var(--accent); 
+  box-shadow: 0 0 0 3px rgba(37,99,235,.15);
+  background: rgba(255,255,255,0.02);
+}
+.el-input__inner:hover { 
+  border-color: #2a2a2a; 
+  background: rgba(255,255,255,0.01);
+}
+
+/* 拖拽区域动画 */
+.drag-active {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+
+/* 加载动画 */
+.loading-spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Cards & overlays */
+.rounded-xl { border-radius: 16px; }
+.selection-overlay { border-radius: 8px; box-shadow: 0 0 0 2px rgba(24,144,255,.20); }
+.context-menu { border-radius: 10px; box-shadow: var(--shadow); }
+
+.grid-bg { background-image: linear-gradient(#111 1px, transparent 1px), linear-gradient(90deg, #111 1px, transparent 1px); background-size: 24px 24px; background-position: 0 0, 0 0; }
+.code-font { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+.selection-overlay { position: absolute; border: 2px solid var(--accent); transition: all .3s ease; pointer-events: none; border-radius: 8px; z-index: 1000; }
+.selection-underline { position: absolute; height: 2px; background: var(--accent); border-radius: 2px; box-shadow: 0 0 0 2px rgba(37,99,235,.14); transition: all .3s ease; pointer-events: none; }
+.overlay-delete-btn { position: absolute; top: -12px; right: -12px; width: 28px; height: 28px; border-radius: 9999px; background: var(--layer); border: 1px solid var(--border); color: var(--text); display: flex; align-items: center; justify-content: center; pointer-events: auto; }
+.context-menu { position: absolute; min-width: 160px; background: var(--layer); border: 1px solid var(--border); padding: 8px; display: none; z-index: 1000; }
+.context-menu button { width: 100%; text-align: left; padding: 8px 10px; border-radius: 6px; }
+.context-menu button:hover { background: #1e1e1e; }

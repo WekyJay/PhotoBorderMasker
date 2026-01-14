@@ -1,0 +1,31 @@
+{
+  "name": "photo-border-masker",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "split:brand": "node scripts/split-brandurl.js"
+  },
+  "dependencies": {
+    "@element-plus/icons-vue": "^2.3.1",
+    "element-plus": "^2.8.6",
+    "exifr": "^7.1.3",
+    "konva": "^9.3.16",
+    "monaco-editor": "^0.52.2",
+    "pinia": "^2.2.6",
+    "vue": "^3.5.11",
+    "vue-router": "^4.6.3",
+    "xterm": "^5.3.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.1.4",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.14",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.10"
+  }
+}

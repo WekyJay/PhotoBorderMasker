@@ -1,0 +1,55 @@
+{
+  "id": "default",
+  "name": "默认模板",
+  "version": 1,
+  "border": {
+    "thickness": 60,
+    "top": 0,
+    "right": 0,
+    "bottom": 60,
+    "left": 0,
+    "color": "#ffffff",
+    "radius": 0,
+    "innerPadding": 0,
+    "outerPadding": 0,
+    "style": "solid"
+  },
+  "items": [
+    {
+      "type": "text",
+      "text": "ISO {ISO}",
+      "x": 40,
+      "y": 40,
+      "fontSize": 18,
+      "color": "#000000",
+      "fontFamily": "Inter"
+    },
+    {
+      "type": "text",
+      "text": "ƒ{FNumber}",
+      "x": 40,
+      "y": 70,
+      "fontSize": 18,
+      "color": "#000000",
+      "fontFamily": "Inter"
+    },
+    {
+      "type": "text",
+      "text": "{Focal}mm",
+      "x": 40,
+      "y": 100,
+      "fontSize": 18,
+      "color": "#000000",
+      "fontFamily": "Inter"
+    },
+    {
+      "type": "text",
+      "text": "{Make} {Model}",
+      "x": 40,
+      "y": 130,
+      "fontSize": 18,
+      "color": "#000000",
+      "fontFamily": "Inter"
+    }
+  ]
+}
